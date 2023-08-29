@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: rgb(27, 32, 48);
+  --secondary: #292e41;
+  --downwards: linear-gradient(180deg, rgba(176,121,236,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+* {
+  font-family: Inter, Arial;
+}
+
+::selection {
+  color: rgb(120, 120, 120);
+  background-color: rgba(135, 135, 135, 0.25);
+}
+
+body {
+  background-color: var(--primary);
+  color: white;
+}
+
+.hero {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 500% 500%;
+
+    animation: moveGradient 45s ease infinite;
+}
+
+@keyframes moveGradient {
+  from, to {
+    background-position: top left;
+  }
+  25% {
+    background-position: bottom right;
+  }
+  50% {
+    background-position: top right;
+  }
+  75% {
+    background-position: bottom left;
+  }
+}
+
+.btn {
+    background-color: rgb(234, 235, 239);
+    color: black;
+    padding: 6px 12px;
+}
+
+.btn:hover {
+    background-color: rgb(219, 220, 224);   
+}
+
+.hexa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 220px;
+    height: 250px;
+
+    margin-inline: -0.02rem;
+}
+
+.hexa-outer {
+    width: 220px;
+    height: 250px;
+    z-index: 1;
+    background: rgb(41, 46, 65);
+    position: absolute;
+    clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%);
+
+    transition: all 150ms ease;
+}
+
+.hexa-inner {
+    width: 215px;
+    height: 245px;
+    z-index: 2;
+    background: rgb(27, 32, 48);
+    position: absolute;
+    clip-path: polygon(0px 24%, 50% 0px, 100% 24%, 100% 76%, 50% 100%, 0px 76%);
+}
+
+.hexa:hover .hexa-outer {background: white}
+.hexa:hover {cursor: pointer}
+.hexa:hover img {transform: scale(105%)}
+.hexa img {transition: all 250ms ease}

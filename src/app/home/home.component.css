@@ -1,0 +1,49 @@
+p img {transition: all 125ms ease}
+p:hover img {margin-left: 1rem}
+
+.howitworks::before {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background: rgb(235,121,236);
+    background: linear-gradient(90deg, rgba(235,121,236,1) 0%, rgba(17,69,143,1) 100%);
+    
+    margin-top: 10.35rem;
+    z-index: -1;
+}
+
+@keyframes ms_1 {
+    from, to {
+        transform: scale(100%);
+        animation-timing-function: cubic-bezier(.51,.06,.22,.99);
+    }
+
+    50% {
+        transform: scale(105%);
+        animation-timing-function: cubic-bezier(.59,.01,.65,.99);
+    }
+}
+
+.ms-os {
+    transform-origin: bottom center;
+    animation: ms_1 5s infinite;
+}
+
+svg .ms-os:nth-of-type(1) {
+    animation: ms_1 5s infinite 200ms;
+}
+
+@keyframes b_1 {25%, 100% {transform: translate(25%, 36%);}}
+@keyframes b_2 {25%, 100% {transform: translate(10%, 36%);}}
+@keyframes b_3 {25%, 100% {transform: translate(-10%, 36%);}}
+@keyframes b_4 {25%, 100% {transform: translate(-25%, 36%);}}
+@keyframes b_5 {25%, 100% {transform: translate(0%, 36%);}}
+
+svg .b_m {animation: b_1 5s infinite 0.15s;}
+svg .b_m:nth-of-type(6) {animation: b_2 5s infinite 1.25s;}
+svg .b_m:nth-of-type(7) {animation: b_3 5s infinite 0s;}
+svg .b_m:nth-of-type(8) {animation: b_4 5s infinite 0.5s;}
+svg .b_m:nth-of-type(9) {animation: b_5 5s infinite 1s;}

@@ -1,0 +1,25 @@
+<nav [ngClass]="{
+    'bg-transparent text-white p-12': !isScrolled,
+    'bg-white text-black p-5': isScrolled,
+    'transition-all duration-150': true,
+    '-translate-y-full': isScrolled && scrollDirection === 'down',
+    'translate-y-0': scrollDirection === 'up'
+    }" 
+    class="flex flex-row justify-between fixed w-screen top-0 bg-red-400">
+
+    <div class="text-3xl font-bold">/ TITLE HERE /</div>
+    
+    <div class="flex flex-row gap-10 items-center text-base font-semibold">
+        <a routerLink="">Protocol</a>
+        <a routerLink="">Governance</a>
+        <a routerLink="">Documentation</a>
+        <a routerLink="">Security</a>
+        <a routerLink="">FAQ</a>
+    </div>
+
+    <button [ngClass]="{'border-0 duration-150': !isScrolled}"
+        class="border rounded-lg border-[var(--primary)] p-2 px-4 mr-4 text-base font-bold
+            hover:bg-[var(--secondary)] hover:text-white">
+        REGISTER
+    </button>
+</nav>
