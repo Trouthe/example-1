@@ -10,6 +10,8 @@ export class NavigationComponent implements OnInit {
   isScrolled = false;
   scrollDirection: 'up' | 'down' = 'up';
   lastScrollPosition = 0;
+  showNav = false;
+  isScrollingLocked = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -35,6 +37,20 @@ export class NavigationComponent implements OnInit {
 
     this.lastScrollPosition = currentScrollPosition; // Update the last scroll position for the next iteration
   }
+
+  toggleNav() {
+    this.showNav = !this.showNav;
+  }
+
+  toggleScrollingLock() {
+    this.isScrollingLocked = !this.isScrollingLocked;
+    if (this.isScrollingLocked) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+      document.body.style.overflow = ''; // Enable scrolling
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {

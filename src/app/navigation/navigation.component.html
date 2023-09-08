@@ -5,7 +5,7 @@
     '-translate-y-full': isScrolled && scrollDirection === 'down',
     'translate-y-0': scrollDirection === 'up'
     }" 
-    class="flex flex-row justify-between fixed w-screen top-0 bg-red-400">
+    class="hidden md:flex flex-row justify-between fixed w-screen top-0 bg-red-400">
 
     <div class="text-3xl font-bold">/ TITLE HERE /</div>
     
@@ -22,4 +22,39 @@
             hover:bg-[var(--secondary)] hover:text-white">
         REGISTER
     </button>
+</nav>
+
+<nav [ngClass]="{
+    'transition-all duration-150': true,
+    '-translate-y-full': isScrolled && scrollDirection === 'down',
+    'translate-y-0': scrollDirection === 'up'
+    }" class="md:hidden flex flex-col md:flex-row md:justify-between fixed w-screen top-0 bg-white">
+
+    <div class="flex justify-between items-center md:w-auto m-5">
+        <div class="text-3xl font-bold text-black">/ TITLE HERE /</div>
+
+        <!-- Hamburger Button -->
+        <button (click)="toggleNav(); toggleScrollingLock()" class="block md:hidden p-2 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="black">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <div [ngClass]="{
+        'hidden': !showNav,
+        'block': showNav
+      }" class="flex flex-col text-black justify-evenly mx-10 pb-12 h-[100vh] text-base font-semibold">
+        <a routerLink="" class="my-5">Protocol</a>
+        <a routerLink="" class="my-5">Governance</a>
+        <a routerLink="" class="my-5">Documentation</a>
+        <a routerLink="" class="my-5">Security</a>
+        <a routerLink="" class="my-5">FAQ</a>
+
+        <button class="lg:hidden justify-end block border items-end rounded-lg border-[var(--primary)] p-2 px-4 text-base font-bold
+            hover:bg-[var(--secondary)] hover:text-white">
+            REGISTER
+        </button>
+    </div>
+
 </nav>
