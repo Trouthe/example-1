@@ -1,343 +1,346 @@
-<app-navigation class="absolute z-50"></app-navigation>
+<app-navigation class="fixed z-50 overflow-hidden"></app-navigation>
 
-<!-- Hero Section -->
-<div class="flex flex-col justify-end lg:px-52 md:px-20 sm:px-0 h-[75vh] sm:h- hero">
-    <div class="flex flex-col lg:my-[6rem] md:my-[6rem] mx-7 mb-10">
-        <img width="50px" src="https://aave.com/aaveGhost.svg">
-        <h1 class="text-2xl tracking-[5px] mt-10">HEADER ABOUT THE TOPIC</h1>
-        <h1 class="text-xl mt-7 w-[50%] font-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit..</h1>
-    </div>
-</div>
-
-<!-- body -->
-<div class="flex flex-col lg:flex-wrap">
-    <div class="flex lg:flex-row md:flex-row flex-col lg:px-[70px] md:px-[70px] px-10">
-        <div class="flex flex-col my-14 lg:p-14 sm:p-0 h-auto">
-            <p class="lg:text-6xl md:text-6xl text-5xl">$837,737,147</p>
-            <p class="text-xl mt-2 mb-10 leading-relaxed text-slate-400 font-bold">of liquidity is locked in <span class="italic font-black">/ crypto /</span>  across 5 networks and over 11 markets.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur animi soluta id molestias minus quam voluptatem inventore laborum, in placeat laboriosam eaque architecto optio repellat qui dolor error. Ullam, laudantium.</p>
+<div class="max-w-[1879px] mr-auto ml-auto overflow-hidden">
+    
+    <!-- Hero Section -->
+    <div class="flex flex-col justify-end lg:px-52 md:px-20 sm:px-0 h-[50rem] sm:h- hero">
+        <div class="flex flex-col lg:my-[6rem] md:my-[6rem] mx-7 mb-10">
+            <img width="50px" src="https://aave.com/aaveGhost.svg">
+            <h1 class="text-2xl tracking-[5px] mt-10">HEADER ABOUT THE TOPIC</h1>
+            <h1 class="text-xl mt-7 w-[50%] font-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit..</h1>
         </div>
+    </div>
 
-        <div class="flex flex-col lg:w-1/2 md:w-1/2 sm:w-full rounded-lg justify-center lg:px-14 sm:px-0 lg:my-14 sm:m-0 mb-20 md:px-0 md:pr-5 h-full">
-            <div class="flex flex-col items-center mt-10">
-                <div class="flex space-x-4 mr-auto">
-                    <div
-                        class="cursor-pointer p-2 font-bold"
-                        *ngFor="let tab of tabs; let i = index"
-                        (click)="selectTab(i)"
-                        [class] = "activeTab === i ? 'text-white' : 'text-slate-500'">
-                            Tab {{ i + 1 }}
+    <!-- body -->
+    <div class="flex flex-col lg:flex-wrap">
+        <div class="flex lg:flex-row md:flex-row flex-col lg:px-[70px] md:px-[70px] px-10">
+            <div class="flex flex-col my-14 lg:p-14 sm:p-0 h-auto">
+                <p class="lg:text-6xl md:text-6xl text-5xl">$837,737,147</p>
+                <p class="text-xl mt-2 mb-10 leading-relaxed text-slate-400 font-bold">of liquidity is locked in <span class="italic font-black">/ crypto /</span>  across 5 networks and over 11 markets.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur animi soluta id molestias minus quam voluptatem inventore laborum, in placeat laboriosam eaque architecto optio repellat qui dolor error. Ullam, laudantium.</p>
+            </div>
+
+            <div class="flex flex-col lg:w-1/2 md:w-1/2 sm:w-full rounded-lg justify-center lg:px-14 sm:px-0 lg:my-14 sm:m-0 mb-20 md:px-0 md:pr-5 h-full">
+                <div class="flex flex-col items-center mt-10">
+                    <div class="flex space-x-4 mr-auto">
+                        <div
+                            class="cursor-pointer p-2 font-bold"
+                            *ngFor="let tab of tabs; let i = index"
+                            (click)="selectTab(i)"
+                            [class] = "activeTab === i ? 'text-white' : 'text-slate-500'">
+                                Tab {{ i + 1 }}
+                        </div>
+                    </div>
+                    <div class="mt-4 w-5/6 h-0.5 mr-auto bg-gray-300 relative">
+                        <div
+                            class="h-0.5 bg-sky-500"
+                            [style.width.%]="progress">
+                        </div>
                     </div>
                 </div>
-                <div class="mt-4 w-5/6 h-0.5 mr-auto bg-gray-300 relative">
-                    <div
-                        class="h-0.5 bg-sky-500"
-                        [style.width.%]="progress">
+                <div class="mt-10">
+                    <ng-container *ngIf="activeTab === 0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</ng-container>
+                    <ng-container *ngIf="activeTab === 1">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Officiis vel vitae fugit vero asperiores, hic obcaecati quas doloribus iusto optio mollitia harum temporibus.</ng-container>
+                    <ng-container *ngIf="activeTab === 2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia architecto facere natus distinctio nobis dolorem nesciunt aliquid laudantium doloribus necessitatibus? Facilis nemo ullam consectetur.</ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:px-[70px] md:px-0 px-0">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 flex-wrap mx-auto w-full lg:mb-14 lg:p-14 md:mb-14 md:p-14 pt-0">
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/rwa.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! 
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga soluta quaerat rerum alias cupiditate quos, eius necessitatibus hic excepturi reiciendis dicta est maxime aspernatur iste corrupti amet inventore. Obcaecati, quidem!</p>
+                </div>
+                
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/metis.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! lore</p>
+                </div>
+                
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/arbitrum.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! magnam harum voluptatum iste quas accusantium magni!</p>
+                </div>
+
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/polygon.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta.</p>
+                </div>
+
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/avalanche.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni!</p>
+                </div>
+
+                <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
+                    <img width="48px" src="https://aave.com/icons/networks/AMM.svg" alt="">
+                    <p class="text-xl font-bold my-[20px]">HEADER</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolores nihil aliquam maxime minus harum illum, sed voluptatem excepturi facilis ad? Reiciendis quaerat eligendi, deserunt fuga temporibus voluptas ad quis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:px-[200px] md:px-20 mx-0 px-5">
+            <div class="mx-auto w-full mb-14 p-14 bg-[var(--secondary)] rounded-md">
+                <p class="text-2xl font-bold">And more to come...</p>
+                <p class="text-slate-400 mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis enim ducimus quos vel.</p>
+                <button class="btn text-sm mt-7 rounded-[0.2rem]">Learn more</button>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:px-[200px] md:px-0 sm:mx-10 items-center">
+            <div class="flex flex-col items-center mx-auto w-full lg:p-14 md:p-14 p-7">
+                <p class="text-5xl font-bold">Title about the community</p>
+                <p class="mt-7 lg:px-[20%] md:px-[20%] px-0 text-lg text-center font-bold text-slate-500"><span class="italic font-black">/ crypto /</span> is a fully decentralized, community governed protocol with 156,595 token holders.</p>
+                <button class="btn text-sm mt-7 lg:mb-0 md:mb-0 mb-7 rounded-[0.2rem]">Visit Forum</button>
+            </div>
+            
+            <img class="mx-auto" src="https://aave.com/governanceGhosts.svg" alt="">
+        </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="flex flex-col w-full howitworks">
+        <p class="text-[2.5rem] text-center font-bold mt-10 mb-10">How it Works</p>
+
+        <div class="flex lg:flex-row md:flex-row flex-col justify-between lg:mx-44 mx-5 md:mx-0 md:ml-32">
+            <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
+                <div class="flex justify-center items-center lg:mt-0 md:mt-0 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">1</div>
+                <p class="font-bold">Title of the first step goes here</p>
+                <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate, perferendis inventore adipisci temporibus molestiae cum numquam at unde eum asperiores fugiat sequi ea dolorum, reiciendis delectus.</p>
+            </div>
+            <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
+                <div class="flex justify-center items-center lg:mt-0 md:mt-0 mt-10 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">2</div>
+                <p class="font-bold">Title of the second step also goes here yet again</p>
+                <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate.</p>
+                <p class="flex flex-row mt-6 cursor-pointer hover:underline">Learn More <img width="20px" height="20px" src="../../assets/right-arrow.png" alt="arrow" class="invert ml-3"></p>
+            </div>
+            <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
+                <div class="flex justify-center items-center lg:mt-0 md:mt-0 mt-10 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">3</div>
+                <p class="font-bold">Title of the third step goes here</p>
+                <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate, perferendis inventore adipisci temporibus molestiae cum numquam at unde eum.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col flex-wrap my-24">
+        <div class="flex lg:flex-row md:flex-col flex-col justify-between lg:px-[200px] md:px-[200px] px-5">
+            <div class="lg:w-[40%] w-full">
+                <p class="text-5xl font-bold lg:text-start md:text-center">Your assets,<br>secured</p>
+                <p class="mt-5 lg:w-[60%] w-full text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="lg:flex md:flex hidden flex-col lg:w-[55%] lg:m-0 md:w-full md:mb-52 md:mt-20 md:ml-10">
+                <div class="flex flex-row absolute">
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="100px" src="https://aave.com/icons/secured/trailOfBits.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/certora.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/openZeppelin.svg" class="z-30">
                     </div>
                 </div>
-              </div>
-              <div class="mt-10">
-                <ng-container *ngIf="activeTab === 0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</ng-container>
-                <ng-container *ngIf="activeTab === 1">Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Officiis vel vitae fugit vero asperiores, hic obcaecati quas doloribus iusto optio mollitia harum temporibus.</ng-container>
-                <ng-container *ngIf="activeTab === 2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia architecto facere natus distinctio nobis dolorem nesciunt aliquid laudantium doloribus necessitatibus? Facilis nemo ullam consectetur.</ng-container>
-              </div>
+                <div class="flex flex-row absolute mt-[11.85rem] -ml-[6.85rem]">
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/sigmaPrime.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/peckshield-logo.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/abdk.svg" class="z-30">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden md:hidden flex scale-[.65] ml-2 my-10">
+                <div class="flex flex-row absolute">
+                    <div class="hexa ">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="100px" src="https://aave.com/icons/secured/trailOfBits.svg" class="z-30">
+                    </div>
+                    <div class="hexa ">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/certora.svg" class="z-30">
+                    </div>
+                </div>
+                <div class="flex flex-row absolute mt-[11.85rem] -ml-[6.85rem]">
+                    <div class="hexa ">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/sigmaPrime.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/peckshield-logo.svg" class="z-30">
+                    </div>
+                </div>
+                <div class="flex flex-row absolute mt-[23.7rem]">
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/openZeppelin.svg" class="z-30">
+                    </div>
+                    <div class="hexa">
+                        <div class="hexa-outer"></div>
+                        <div class="hexa-inner"></div>
+                        <img width="150px" src="https://aave.com/icons/secured/abdk.svg" class="z-30">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-col lg:px-[70px] md:px-0 px-0">
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 flex-wrap mx-auto w-full lg:mb-14 lg:p-14 md:mb-14 md:p-14 pt-0">
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/rwa.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! 
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga soluta quaerat rerum alias cupiditate quos, eius necessitatibus hic excepturi reiciendis dicta est maxime aspernatur iste corrupti amet inventore. Obcaecati, quidem!</p>
-            </div>
-            
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/metis.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! lore</p>
-            </div>
-            
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/arbitrum.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni! magnam harum voluptatum iste quas accusantium magni!</p>
-            </div>
-
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/polygon.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta.</p>
-            </div>
-
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/avalanche.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni!</p>
-            </div>
-
-            <div class="flex flex-col hover:bg-[var(--secondary)] cursor-pointer p-5 m-2 rounded-md">
-                <img width="48px" src="https://aave.com/icons/networks/AMM.svg" alt="">
-                <p class="text-xl font-bold my-[20px]">HEADER</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio eaque eius alias cum voluptatem cumque suscipit cupiditate molestias ipsam architecto repudiandae soluta, magnam harum voluptatum iste quas accusantium magni!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolores nihil aliquam maxime minus harum illum, sed voluptatem excepturi facilis ad? Reiciendis quaerat eligendi, deserunt fuga temporibus voluptas ad quis.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex flex-col lg:px-[200px] md:px-20 mx-0 px-5">
-        <div class="mx-auto w-full mb-14 p-14 bg-[var(--secondary)] rounded-md">
-            <p class="text-2xl font-bold">And more to come...</p>
-            <p class="text-slate-400 mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis enim ducimus quos vel.</p>
-            <button class="btn text-sm mt-7 rounded-[0.2rem]">Learn more</button>
-        </div>
-    </div>
-
-    <div class="flex flex-col lg:px-[200px] md:px-0 sm:mx-10 items-center">
-        <div class="flex flex-col items-center mx-auto w-full lg:p-14 md:p-14 p-7">
-            <p class="text-5xl font-bold">Title about the community</p>
-            <p class="mt-7 lg:px-[20%] md:px-[20%] px-0 text-lg text-center font-bold text-slate-500"><span class="italic font-black">/ crypto /</span> is a fully decentralized, community governed protocol with 156,595 token holders.</p>
-            <button class="btn text-sm mt-7 lg:mb-0 md:mb-0 mb-7 rounded-[0.2rem]">Visit Forum</button>
-        </div>
+    <div class="flex flex-col flex-wrap mt-[25rem] lg:mt-72 md:mt-72 mb-36 lg:px-[125px] md:px-[50px]">
+        <div class="flex lg:flex-row md:flex-col flex-col justify-between pt-5 lg:p-24 md:p-24 mx-5 rounded-lg bg-[var(--secondary)]">
+            <div class="lg:w-[50%] lg:h-1 md:h-[35rem] h-[32.5rem] md:w-full">
+                <div>
+                    <svg height="37rem" width="100%">
+                        <defs>
+                            <linearGradient id="c_gradient" x2="0%" y2="70%">
+                                <stop offset="0%" stop-color="#b079ec" />
+                                <stop offset="100%" stop-color="#292e41" />
+                            </linearGradient>
+                            <linearGradient id="2c_gradient" x2="0%" y2="60%">
+                                <stop offset="0%" stop-color="#b079ec9e" />
+                                <stop offset="100%" stop-color="#292e41" />
+                            </linearGradient>
+                            <linearGradient id="3c_gradient" x2="0%" y2="50%">
+                                <stop offset="0%" stop-color="#b079ec53" />
+                                <stop offset="100%" stop-color="#292e41" />
+                            </linearGradient>
+                            <linearGradient id="cyan_grad" x2="0%" y2="15%">
+                                <stop offset="0%" stop-color="transparent" />
+                                <stop offset="100%" stop-color="cyan" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="ms-os" cx="50%" cy="50%" r="40%" fill="transparent" stroke="url(#3c_gradient)" stroke-width="1"></circle>
+                        <circle class="ms-os" cx="50%" cy="50%" r="35%" fill="transparent" stroke="url(#2c_gradient)" stroke-width="1"></circle>
         
-        <img class="mx-auto" src="https://aave.com/governanceGhosts.svg" alt="">
-    </div>
-</div>
+                        <circle cx="50%" cy="50%" r="30%" fill="transparent" stroke="url(#c_gradient)" stroke-width="1"></circle>
+                        <circle cx="50%" cy="37%" r="1%" fill="cyan"></circle>
+        
+                        <line x1="25%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
+                        <line x1="40%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
+                        <line x1="50.00001%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
+                        <line x1="60%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
+                        <line x1="75%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
+        
+                        <circle class="b_m" cx="25%" cy="1%" r="1%" fill="cyan"></circle>
+                        <circle class="b_m" cx="40%" cy="1%" r="1%" fill="cyan"></circle>
+                        <circle class="b_m" cx="60%" cy="1%" r="1%" fill="cyan"></circle>
+                        <circle class="b_m" cx="75%" cy="1%" r="1%" fill="cyan"></circle>
+                        <circle class="b_m" cx="50%" cy="1%" r="1%" fill="cyan"></circle>
+                    </svg>
+                    <div class="relative h-[0%] -top-[20rem]">
+                        <p class="text-center font-bold">/ TITLE / Community Treasury</p>
+                        <p class="text-center font-bold text-3xl">$ 87,865,188</p>
 
-<!-- How it works -->
-<div class="flex flex-col w-full howitworks">
-    <p class="text-[2.5rem] text-center font-bold mt-10 mb-10">How it Works</p>
-
-    <div class="flex lg:flex-row md:flex-row flex-col justify-between lg:mx-44 mx-5 md:mx-0 md:ml-32">
-        <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
-            <div class="flex justify-center items-center lg:mt-0 md:mt-0 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">1</div>
-            <p class="font-bold">Title of the first step goes here</p>
-            <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate, perferendis inventore adipisci temporibus molestiae cum numquam at unde eum asperiores fugiat sequi ea dolorum, reiciendis delectus.</p>
-        </div>
-        <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
-            <div class="flex justify-center items-center lg:mt-0 md:mt-0 mt-10 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">2</div>
-            <p class="font-bold">Title of the second step also goes here yet again</p>
-            <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate.</p>
-            <p class="flex flex-row mt-6 cursor-pointer hover:underline">Learn More <img width="20px" height="20px" src="../../assets/right-arrow.png" alt="arrow" class="invert ml-3"></p>
-        </div>
-        <div class="flex flex-col lg:w-[33%] md:w-[33%] w-full mr-[100px]">
-            <div class="flex justify-center items-center lg:mt-0 md:mt-0 mt-10 w-[52px] h-[52px] bg-[var(--secondary)] mb-10 rounded-full text-2xl font-black">3</div>
-            <p class="font-bold">Title of the third step goes here</p>
-            <p class="mt-3 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, voluptatem maxime est cupiditate, perferendis inventore adipisci temporibus molestiae cum numquam at unde eum.</p>
-        </div>
-    </div>
-</div>
-
-<div class="flex flex-col flex-wrap my-24">
-    <div class="flex lg:flex-row md:flex-col flex-col justify-between lg:px-[200px] md:px-[200px] px-5">
-        <div class="lg:w-[40%] w-full">
-            <p class="text-5xl font-bold lg:text-start md:text-center">Your assets,<br>secured</p>
-            <p class="mt-5 lg:w-[60%] w-full text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div class="lg:flex md:flex hidden flex-col lg:w-[55%] lg:m-0 md:w-full md:mb-52 md:mt-20 md:ml-10">
-            <div class="flex flex-row absolute">
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="100px" src="https://aave.com/icons/secured/trailOfBits.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/certora.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/openZeppelin.svg" class="z-30">
-                </div>
-            </div>
-            <div class="flex flex-row absolute mt-[11.85rem] -ml-[6.85rem]">
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/sigmaPrime.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/peckshield-logo.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/abdk.svg" class="z-30">
-                </div>
-            </div>
-        </div>
-
-        <div class="lg:hidden md:hidden flex scale-[.65] ml-2 my-10">
-            <div class="flex flex-row absolute">
-                <div class="hexa ">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="100px" src="https://aave.com/icons/secured/trailOfBits.svg" class="z-30">
-                </div>
-                <div class="hexa ">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/certora.svg" class="z-30">
-                </div>
-            </div>
-            <div class="flex flex-row absolute mt-[11.85rem] -ml-[6.85rem]">
-                <div class="hexa ">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/sigmaPrime.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/peckshield-logo.svg" class="z-30">
-                </div>
-            </div>
-            <div class="flex flex-row absolute mt-[23.7rem]">
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/openZeppelin.svg" class="z-30">
-                </div>
-                <div class="hexa">
-                    <div class="hexa-outer"></div>
-                    <div class="hexa-inner"></div>
-                    <img width="150px" src="https://aave.com/icons/secured/abdk.svg" class="z-30">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="flex flex-col flex-wrap mt-[25rem] lg:mt-72 md:mt-72 mb-36 lg:px-[125px] md:px-[50px]">
-    <div class="flex lg:flex-row md:flex-col flex-col justify-between pt-5 lg:p-24 md:p-24 mx-5 rounded-lg bg-[var(--secondary)]">
-        <div class="lg:w-[50%] lg:h-1 md:h-[35rem] h-[32.5rem] md:w-full">
-            <div>
-                <svg height="37rem" width="100%">
-                    <defs>
-                        <linearGradient id="c_gradient" x2="0%" y2="70%">
-                            <stop offset="0%" stop-color="#b079ec" />
-                            <stop offset="100%" stop-color="#292e41" />
-                        </linearGradient>
-                        <linearGradient id="2c_gradient" x2="0%" y2="60%">
-                            <stop offset="0%" stop-color="#b079ec9e" />
-                            <stop offset="100%" stop-color="#292e41" />
-                        </linearGradient>
-                        <linearGradient id="3c_gradient" x2="0%" y2="50%">
-                            <stop offset="0%" stop-color="#b079ec53" />
-                            <stop offset="100%" stop-color="#292e41" />
-                        </linearGradient>
-                        <linearGradient id="cyan_grad" x2="0%" y2="15%">
-                            <stop offset="0%" stop-color="transparent" />
-                            <stop offset="100%" stop-color="cyan" />
-                        </linearGradient>
-                    </defs>
-                    <circle class="ms-os" cx="50%" cy="50%" r="40%" fill="transparent" stroke="url(#3c_gradient)" stroke-width="1"></circle>
-                    <circle class="ms-os" cx="50%" cy="50%" r="35%" fill="transparent" stroke="url(#2c_gradient)" stroke-width="1"></circle>
-    
-                    <circle cx="50%" cy="50%" r="30%" fill="transparent" stroke="url(#c_gradient)" stroke-width="1"></circle>
-                    <circle cx="50%" cy="37%" r="1%" fill="cyan"></circle>
-    
-                    <line x1="25%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
-                    <line x1="40%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
-                    <line x1="50.00001%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
-                    <line x1="60%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
-                    <line x1="75%" y1="0%" x2="50%" y2="37%" stroke="url(#cyan_grad)" />
-    
-                    <circle class="b_m" cx="25%" cy="1%" r="1%" fill="cyan"></circle>
-                    <circle class="b_m" cx="40%" cy="1%" r="1%" fill="cyan"></circle>
-                    <circle class="b_m" cx="60%" cy="1%" r="1%" fill="cyan"></circle>
-                    <circle class="b_m" cx="75%" cy="1%" r="1%" fill="cyan"></circle>
-                    <circle class="b_m" cx="50%" cy="1%" r="1%" fill="cyan"></circle>
-                </svg>
-                <div class="relative h-[0%] -top-[20rem]">
-                    <p class="text-center font-bold">/ TITLE / Community Treasury</p>
-                    <p class="text-center font-bold text-3xl">$ 87,865,188</p>
-
-                    <div class="flex flex-col w-auto mx-[25%] mt-10">
-                        <div class="flex flex-row">
-                            <p>ANVE</p>
-                            <div class="w-[73.3%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
-                            <p class="text-gray-400 ml-2">73.3%</p>
-                        </div>
-                        <div class="flex flex-row">
-                            <p class="justify-start">BDI</p>
-                            <div class="w-[8.1%] justify-end h-[0.3rem] ml-9 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
-                            <p class="text-gray-400 ml-2">8.1%</p>
-                        </div>
-                        <div class="flex flex-row">
-                            <p>USDT</p>
-                            <div class="w-[7.8%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
-                            <p class="text-gray-400 ml-2">7.8%</p>
-                        </div>
-                        <div class="flex flex-row">
-                            <p>USDC</p>
-                            <div class="w-[3.7%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
-                            <p class="text-gray-400 ml-2">3.7%</p>
+                        <div class="flex flex-col w-auto mx-[25%] mt-10">
+                            <div class="flex flex-row">
+                                <p>ANVE</p>
+                                <div class="w-[73.3%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
+                                <p class="text-gray-400 ml-2">73.3%</p>
+                            </div>
+                            <div class="flex flex-row">
+                                <p class="justify-start">BDI</p>
+                                <div class="w-[8.1%] justify-end h-[0.3rem] ml-9 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
+                                <p class="text-gray-400 ml-2">8.1%</p>
+                            </div>
+                            <div class="flex flex-row">
+                                <p>USDT</p>
+                                <div class="w-[7.8%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
+                                <p class="text-gray-400 ml-2">7.8%</p>
+                            </div>
+                            <div class="flex flex-row">
+                                <p>USDC</p>
+                                <div class="w-[3.7%] h-[0.3rem] ml-5 rounded-3xl my-[0.6rem] bg-cyan-400"></div>
+                                <p class="text-gray-400 ml-2">3.7%</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="lg:w-[50%] lg:pl-[100px] md:p-5 p-10 flex flex-col w-full">
-            <p class="text-slate-400 mt-5">The / TITLE / treasury is composed of the ecosystem reserve (/ crypto / tokens) and treasury collectors which earn fees from:</p>
-            <ul class="list-disc mx-4 mt-5">
-                <li class="my-2 text-slate-400">Reserve factor: percentage of protocol interest paid by borrowers</li>
-                <li class="my-2 text-slate-400">Instant liquidity fees: percentage of fees from instant liquidity transactions (V3 only)</li>
-                <li class="my-2 text-slate-400">Liquidation fees: percentage of collateral liquidation bonus (V3 only, not yet active)</li>
-                <li class="my-2 text-slate-400">Portal fees: paid by bridging protocols to re-back assets (V3 only, not yet active)</li>
-            </ul>
-            
-            <div class="my-10">
-                <div class="w-full inline-flex -ml-[0.37rem] lg:m-0 md:m-0">
-                    <p class="w-[39%] text-sm lg:text-base md:text-base">39.0%</p>
-                    <p class="w-[40.4%] text-sm lg:text-base md:text-base">40.4%</p>
-                    <p class="w-[15%] text-sm lg:text-base md:text-base">15.0%</p>
-                    <p class="w-[5.6%] text-sm lg:text-base md:text-base">5.6%</p>
-                </div>
-                <div class="w-full inline-flex bg-white h-2 rounded-xl overflow-hidden">
-                    <div class="bg-pink-500 w-[39%] h-2"></div>
-                    <div class="bg-cyan-500 w-[40.4%] h-2"></div>
-                    <div class="bg-yellow-500 w-[15%] h-2"></div>
-                    <div class="bg-red-500 w-[5.6%] h-2"></div>
-                </div>
-                <div class="flex flex-row w-full">
-                    <div class="flex flex-row flex-wrap w-full justify-between content-between">
-                        <div class="flex items-center">
-                            <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-pink-500 rounded-full"></div>
-                            <p>ETH Mainnet</p>
-                        </div>
+            <div class="lg:w-[50%] lg:pl-[100px] md:p-5 p-10 flex flex-col w-full">
+                <p class="text-slate-400 mt-5">The / TITLE / treasury is composed of the ecosystem reserve (/ crypto / tokens) and treasury collectors which earn fees from:</p>
+                <ul class="list-disc mx-4 mt-5">
+                    <li class="my-2 text-slate-400">Reserve factor: percentage of protocol interest paid by borrowers</li>
+                    <li class="my-2 text-slate-400">Instant liquidity fees: percentage of fees from instant liquidity transactions (V3 only)</li>
+                    <li class="my-2 text-slate-400">Liquidation fees: percentage of collateral liquidation bonus (V3 only, not yet active)</li>
+                    <li class="my-2 text-slate-400">Portal fees: paid by bridging protocols to re-back assets (V3 only, not yet active)</li>
+                </ul>
+                
+                <div class="my-10">
+                    <div class="w-full inline-flex -ml-[0.37rem] lg:m-0 md:m-0">
+                        <p class="w-[39%] text-sm lg:text-base md:text-base">39.0%</p>
+                        <p class="w-[40.4%] text-sm lg:text-base md:text-base">40.4%</p>
+                        <p class="w-[15%] text-sm lg:text-base md:text-base">15.0%</p>
+                        <p class="w-[5.6%] text-sm lg:text-base md:text-base">5.6%</p>
+                    </div>
+                    <div class="w-full inline-flex bg-white h-2 rounded-xl overflow-hidden">
+                        <div class="bg-pink-500 w-[39%] h-2"></div>
+                        <div class="bg-cyan-500 w-[40.4%] h-2"></div>
+                        <div class="bg-yellow-500 w-[15%] h-2"></div>
+                        <div class="bg-red-500 w-[5.6%] h-2"></div>
+                    </div>
+                    <div class="flex flex-row w-full">
+                        <div class="flex flex-row flex-wrap w-full justify-between content-between">
+                            <div class="flex items-center">
+                                <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-pink-500 rounded-full"></div>
+                                <p>ETH Mainnet</p>
+                            </div>
 
-                        <div class="flex items-center">
-                            <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-cyan-500 rounded-full"></div>
-                            <p>Polygon</p>                                
-                        </div>
+                            <div class="flex items-center">
+                                <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-cyan-500 rounded-full"></div>
+                                <p>Polygon</p>                                
+                            </div>
 
-                        <div class="flex items-center">
-                            <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-yellow-500 rounded-full"></div>
-                            <p>Avalanche</p>                                
-                        </div>
+                            <div class="flex items-center">
+                                <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-yellow-500 rounded-full"></div>
+                                <p>Avalanche</p>                                
+                            </div>
 
-                        <div class="flex items-center">
-                            <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-red-500 rounded-full"></div>
-                            <p>Optimism</p>
+                            <div class="flex items-center">
+                                <div class="w-[0.65rem] h-[0.65rem] mr-2 bg-red-500 rounded-full"></div>
+                                <p>Optimism</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flex flex-row justify-between">
-                <div>
-                    <p class="text-lg">Ecosystem Reserve</p>
-                    <p class="text-lg">$ 61,114,379</p>
-                </div>
-                <div>
-                    <p class="text-lg">Treasury Collectors</p>
-                    <p class="text-lg">$ 22,956,250</p>
+                <div class="flex flex-row justify-between">
+                    <div>
+                        <p class="text-lg">Ecosystem Reserve</p>
+                        <p class="text-lg">$ 61,114,379</p>
+                    </div>
+                    <div>
+                        <p class="text-lg">Treasury Collectors</p>
+                        <p class="text-lg">$ 22,956,250</p>
+                    </div>
                 </div>
             </div>
         </div>
